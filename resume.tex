@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titlesec} % Required for formatting the title
+\usepackage{titling} % Required for calling author in maketitle
+\usepackage{hyperref} % Required for hyperlinks
+\usepackage{geometry} % Required for resizing the layout of the page
+% Required for formatting
+\usepackage{enumitem}
+\usepackage{parskip}  
+
+\pagestyle{empty} % Removes the page numbers
+% Title Formatting
+\titleformat{\section}{\Large\bfseries\vspace{-0.4em}}{}{0em}{} [\titlerule]
+\titleformat{\subsection}{\large\bfseries\vspace{-0.4em}}{}{0em}{}
+\author{Nicholas Caro Lopez}
+\date{May 2023}
+
+% Creates a command for right-indenting text
+\newcommand{\rightindent}[1]{\hfill{\textmd{#1}}}
+% Creates a command for handling jobs
+\newcommand{\job}[3]{
+    #1,  % 1st Arg = Role Title
+    \textmd{#2} % 2nd Arg = Company
+    \hfill{\textmd{#3}} % 3rd arg = Duration
+}
+
+% Hyperlink Formatting
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+% geometry layout setup
+\geometry{
+    letterpaper,
+    left=.5in,
+    top=.7in,
+    right=.5in,
+    bottom=.7in
+}
+
+% Redefines the maketitle command
+\renewcommand{\maketitle}{
+    \begin{center}
+    {\LARGE\bfseries\theauthor\\} % Generates name, in bold and LARGE text size and a newline char
+    \vspace{0.3em} % Adds some whitespace
+    Burlington, ON $\mid$ \href{https://nickcarolopez.ca/}{Website}  $\mid$ \href{https://linkedin.com/in/nicholas-caro-lopez-123738252/}{LinkedIn} $\mid$ \href{https://github.com/nicholas489}{Github}
+    \end{center}
+    \vspace{-1.2em} % Removes whitespace
+}
+
+% Removes the spacing between each bullet point in itemize & rest of document
+\let\olditemize\itemize
+\let\oldenditemize\enditemize
+\renewcommand{\itemize}{
+    \vspace{-0.4em}
+    \olditemize
+    \setlength{\parskip}{0em}
+}
+\renewcommand{\enditemize}{
+    \oldenditemize
+    \vspace{-0.7em}
+}
+
+\begin{document}
+\maketitle
+
+\section{Education}
+\subsection{Toronto Metropolitan University (formerly Ryerson University) \rightindent{Sept. 2022 - Present}}
+\vspace{-0.3em}Candidate for Bachelor of Science (Honours), Computer Science Co-op \rightindent{CGPA: 4.09/4.33}
+\begin{itemize}
+    \item \textbf{Relevant Coursework}: Data Structures \& Algorithms, Web Development, Intro to Unix \& C, Linear Algebra
+    \item \textbf{Extracurricular Involvement}: Senior Representative for Metropolitan Open Source Society
+    \item \textbf{Awards}: Faculty of Science Dean's List 2022-23, Academic Entrance Scholarship 
+\end{itemize}
+
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Computer Languages}: Python, Java, C, HTML, CSS, JavaScript, Lisp, Perl, PHP, Ruby, Bash
+    \item \textbf{Frameworks/Libraries}: MySQL, Tailwind CSS, Bootstrap, JQuery, Qt
+    \item \textbf{Development Tools}: Visual Studio Code, Git/Github, Unix/Linux
+    \item \textbf{Spoken Languages}: English, Spanish
+\end{itemize}
+
+\section{Work Experience}
+\subsection{\job{Software Developer}{Toronto Metropolitan University - Toronto, ON}{Sept. 2023 - Present}}
+\begin{itemize}
+    \item Integrated an advanced image-based motion tracking extension into \textbf{open-source software}, 3D Slicer
+    \item Cooperated effectively within a \textbf{Agile software development team}, optimizing workflow, visualizing progress, and delivering quality software solutions on time
+    \item Created new functionality on the graphical user interface, increasing usability by 25\%, using the \textbf{3D Slicer Python API}
+\end{itemize}
+\subsection{\job{Teaching Assistant}{RoboThink Northwest Toronto - Burlington, ON}{May 2023 - Aug. 2023}}
+\begin{itemize}
+    \item Designed and taught a comprehensive curriculum introducing students to programming in Scratch 
+    \item Assisted the STEM Teacher in utilizing RoboThink materials effectively to deliver engaging and interactive lessons
+    \item Enhanced students learning through administrative tasks such as organizing curriculum binders and printouts, improving productivity by 50\%
+    \item Demonstrated attentiveness to individual students, providing personalized support and guidance to enhance their learning experience
+\end{itemize}
+\subsection{\job{Associate}{Dollarama - Burlington, ON}{May 2022 - Aug. 2022}}
+\begin{itemize} 
+    \item Provided courteous customer service by warmly welcoming customers and addressing their inquiries or issues promptly
+    \item Conducted financial transactions including credit/debit cards, cash, gift cards, and store credits with proficiency
+    \item Collaborated with floor staff to maintain a well-stocked and organized store by assisting with restocking shelves and ensuring clean aisles
+\end{itemize}
+
+\section{Personal Projects}
+\subsection{\href{https://nicholas489.github.io/Sudoku_Solver/}{Sudoku Solver} \textmd{- HTML, CSS, JavaScript} \rightindent{May 2023 - Aug. 2023}}
+\begin{itemize}
+    \item Defined an \textbf{Event Listener} and \textbf{Regex} for capturing and restricting user input to digits 1-9
+    \item Created a \textbf{responsive} and \textbf{interactive web page} using CSS concepts, namely \textbf{Media Queries} and \textbf{Flexbox/Grid Layout}
+    \item Employed the \textbf{Backtracking Algorithm} to solve every valid Sudoku board inputted by the user and displayed the solution dynamically on the web page
+\end{itemize}
+\subsection{Simon-Says Memory Game \textmd{- Java} \rightindent{Feb. 2023 - Apr. 2023}}
+\begin{itemize} 
+    \item Utilized the \textbf{JFrame} library to generate and display the graphical user interface
+    \item Incorporated \textbf{Object-Oriented Programming} concepts such as \textbf{Classes}, \textbf{Objects} and \textbf{Inheritance} to create and display items such as the game level and buttons
+    \item Applied \textbf{Inheritance} and \textbf{Method Overriding} enabling the program to receive the user’s mouse clicks and execute certain functions accordingly
+\end{itemize}
+\subsection{Riemann Sum Calculator \textmd{- Python} \rightindent{Oct. 2022 - Dec. 2022}}
+\begin{itemize} 
+    \item Wrote a script with the purpose of approximating the area under a polynomial curve
+    \item Implemented \textbf{Variables}, \textbf{Data Types}, \textbf{Control Flow}, \textbf{Modules} and \textbf{User Input} to read a given mathematical function
+    \item Executed \textbf{Functions}, \textbf{Exception Handling} and \textbf{File I/O} to calculate the integral and return the area in a .txt file
+\end{itemize}
+\end{document}
