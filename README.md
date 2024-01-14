@@ -4,12 +4,12 @@
 
 This LaTeX document is my resume, detailing education, technical skills, work experience, and personal projects. Designed to be clean, professional, and informative, it highlights my achievements and skills in a structured format.
 
-## Features
+## Sections
 
-    Education Section: Outlines academic background and achievements.
-    Technical Skills Section: Lists programming languages, frameworks, and tools I'm proficient in.
-    Work Experience Section: Details relevant professional experiences with descriptions of responsibilities and accomplishments.
-    Personal Projects Section: Describes my key projects and showcasing practical skills.
+    Education: Outlines academic background and achievements.
+    Technical Skills: Lists programming languages, frameworks, and tools I'm proficient in.
+    Work Experience: Details relevant professional experiences with descriptions of responsibilities and accomplishments.
+    Personal Projects: Describes my key projects and showcasing practical skills.
 
 ## Requirements
 
