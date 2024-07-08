@@ -1,124 +1,210 @@
-\documentclass[10pt]{article}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{titlesec} % Required for formatting the title
-\usepackage{titling} % Required for calling author in maketitle
-\usepackage{hyperref} % Required for hyperlinks
-\usepackage{geometry} % Required for resizing the layout of the page
-% Required for formatting
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{parskip}  
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
-\pagestyle{empty} % Removes the page numbers
-% Title Formatting
-\titleformat{\section}{\Large\bfseries\vspace{-0.4em}}{}{0em}{} [\titlerule]
-\titleformat{\subsection}{\large\bfseries\vspace{-0.4em}}{}{0em}{}
-\author{Nicholas Caro Lopez}
-\date{May 2023}
 
-% Creates a command for right-indenting text
-\newcommand{\rightindent}[1]{\hfill{\textmd{#1}}}
-% Creates a command for handling jobs
-\newcommand{\job}[3]{
-    #1,  % 1st Arg = Role Title
-    \textmd{#2} % 2nd Arg = Company
-    \hfill{\textmd{#3}} % 3rd arg = Duration
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.3in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-% Hyperlink Formatting
-\hypersetup{
-    colorlinks=true,
-    urlcolor=blue
-}
-% geometry layout setup
-\geometry{
-    letterpaper,
-    left=.5in,
-    top=.7in,
-    right=.5in,
-    bottom=.7in
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{#2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-% Redefines the maketitle command
-\renewcommand{\maketitle}{
-    \begin{center}
-    {\LARGE\bfseries\theauthor\\} % Generates name, in bold and LARGE text size and a newline char
-    \vspace{0.3em} % Adds some whitespace
-    Burlington, ON $\mid$ \href{https://nickcarolopez.ca/}{Website}  $\mid$ \href{https://linkedin.com/in/nicholas-caro-lopez-123738252/}{LinkedIn} $\mid$ \href{https://github.com/nicholas489}{Github}
-    \end{center}
-    \vspace{-1.2em} % Removes whitespace
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{1.00\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-% Removes the spacing between each bullet point in itemize & rest of document
-\let\olditemize\itemize
-\let\oldenditemize\enditemize
-\renewcommand{\itemize}{
-    \vspace{-0.4em}
-    \olditemize
-    \setlength{\parskip}{0em}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.00\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+    
 }
-\renewcommand{\enditemize}{
-    \oldenditemize
-    \vspace{-0.7em}
-}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize} \vspace{-18pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
-\maketitle
 
+%----------HEADING----------
+\begin{center}
+    \textbf{\huge \scshape Nicholas Caro Lopez} \\ \vspace{3pt}
+    \small Burlington, ON $|$ 
+    \href{https://www.linkedin.com/in/nicholas-caro-lopez/}{\color{blue}{LinkedIn}} $|$
+    \href{https://github.com/nicholas489}{\color{blue}{GitHub}} $|$
+    \href{https://nickcarolopez.ca}{\color{blue}{Website}}
+    \vspace{-9pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
 \section{Education}
-\subsection{Toronto Metropolitan University (formerly Ryerson University) \rightindent{Sept. 2022 - Present}}
-\vspace{-0.3em}Candidate for Bachelor of Science (Honours), Computer Science Co-op \rightindent{CGPA: 4.04/4.33}
-\begin{itemize}
-    \item \textbf{Relevant Coursework}: Introduction to Software Engineering, Data Structures, Operating Systems I, Web Systems Development, Intro to Unix \& C \& C++, Probability and Statistics, Linear Algebra
-    \item \textbf{Extracurricular Involvement}: Senior Representative for Metropolitan Open Source Society
-    \item \textbf{Awards}: Faculty of Science Dean's List 2022-23, Academic Entrance Scholarship 
-\end{itemize}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Toronto Metropolitan University (formerly Ryerson University)}{Toronto, ON}
+      {Candidate for Bachelor of Science, Computer Science Co-op}{Sep 2022 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Concentration}: Software Engineering}
+        \resumeItem{\textbf{GPA}: 4.07/4.33, \textit{Dean’s List}}
+        \resumeItem{\textbf{Relevant Coursework}: Introduction to Software Engineering, Data Structures, Operating Systems I, Web Systems Development, Intro to Unix \& C \& C++, Probability and Statistics, Linear Algebra}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Dayforce (formerly Ceridian)}{Toronto, ON}
+      {Software Developer Intern}{May 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Mocked user login API calls from a monolithic codebase, ensuring reliable and isolated integration tests for a identity-based microservice} % WIP, mention that I used the C# WebApi?
+      \resumeItemListEnd
+    \resumeSubheading
+      {Toronto Metropolitan University}{Toronto, ON}
+      {Software Developer}{Sep 2023 -- Apr 2024}
+      \resumeItemListStart
+        \resumeItem{Integrated an advanced image-based motion tracking extension into \textbf{open-source software}, 3D Slicer}
+        \resumeItem{Cooperated effectively within an \textbf{Agile software development team}, optimizing workflow, visualizing progress, and delivering quality software solutions on time}
+        \resumeItem{Engineered the \textbf{Backend Logic} of the extension, enabling multi-file deletion and processing within a single session and resulting in \textbf{33\%} decrease in backend-related bug reports}
+        \resumeItem{Created new graphical user interface functionality, enhancing usability by \textbf{28\%} through \textbf{3D Slicer's Python API}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {RoboThink Northwest Toronto}{Burlington, ON}
+      {Teaching Assistant}{May 2023 -- Aug 2023}
+      \resumeItemListStart
+        \resumeItem{Designed and taught a comprehensive curriculum introducing students to programming in Scratch}
+        \resumeItem{Supported the STEM Teacher in effectively employing RoboThink materials for engaging and interactive lessons}
+        \resumeItem{Enhanced students learning through administrative tasks such as organizing curriculum binders and printouts, improving productivity by \textbf{50\%}}
+        \resumeItem{Demonstrated attentiveness to individual students, providing personalized support and guidance to enhance their learning experience}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \vspace{-3pt}
+      \resumeProjectHeading
+        {
+        \textbf{\href{https://portal.terrahacks.ca}{\color{blue}Terrahacks Application Portal}}
+        }{\textbf{Supabase $|$ NextJS $/$ ReactJS $|$ Tailwind CSS}}
+        \resumeItemListStart
+            \resumeItem{Developed an application portal for a \textbf{Hackathon}, successfully handling the registration of \textbf{200+} participants} % Replace the 200+ when the official number comes out
+            \resumeItem{Designed and implemented a forgot password \textbf{data flow diagram} with \textbf{Supabase's  Authentication REST API}}
+            \resumeItem{Streamlined the hacker acceptance/rejection process by leveraging a \textbf{SQL JOIN} query integrating data from tables using a \textbf{one-to-one relationship}}
+          \resumeItemListEnd
+      \vspace{-7pt}
+      \resumeProjectHeading
+          {\textbf{Sudoku Solver}}{\textbf{HTML $|$ CSS $|$ JavaScript}}
+          \resumeItemListStart
+            \resumeItem{Defined an \textbf{Event Listener} and \textbf{Regular Expression} for capturing and restricting user input to digits 1-9}
+            \resumeItem{Constructed an \textbf{interactive, responsive web page} utilizing \textbf{CSS Media Queries} and \textbf{Flexbox/Grid Layouts} for optimal user experience across various devices}
+            \resumeItem{Employed a \textbf{Backtracking Algorithm} to solve every valid Sudoku board inputted by the user and displayed the solution dynamically on the web page}
+          \resumeItemListEnd
+      \vspace{-7pt}
+      \resumeProjectHeading
+          {\textbf{Simon-Says Memory Game}}{\textbf{Java $|$ JFrame}}
+          \resumeItemListStart
+            \resumeItem{Incorporated \textbf{Object-Oriented Programming} principles such as \textbf{Classes, Objects and Inheritance} to create and display items such as the game level and buttons on the graphical user interface}
+            \resumeItem{Applied \textbf{Polymorphism} through \textbf{Method Overriding} enabling the program to receive the user's mouse clicks and execute certain functions accordingly}
+          \resumeItemListEnd
+      \vspace{-3pt}
+    \resumeSubHeadingListEnd
+    
+%
+%-----------PROGRAMMING SKILLS-----------
 \section{Technical Skills}
-\begin{itemize}
-    \item \textbf{Computer Languages}: Python, Java, C, HTML, CSS, JavaScript, Lisp, Perl, PHP, Ruby
-    \item \textbf{Frameworks/Libraries}: MySQL, Tailwind CSS, Bootstrap, JQuery, PyQt
-    \item \textbf{Development Tools}: Visual Studio Code, Git/Github, Unix/Linux
-    \item \textbf{Spoken Languages}: English, Spanish
-\end{itemize}
-
-\section{Work Experience}
-\subsection{\job{Software Developer}{Toronto Metropolitan University - Toronto, ON}{Sept. 2023 - Present}}
-\begin{itemize}
-    \item Integrated an advanced image-based motion tracking extension into \textbf{open-source software}, 3D Slicer
-    \item Cooperated effectively within a \textbf{Agile software development team}, optimizing workflow, visualizing progress, and delivering quality software solutions on time
-    \item Reworked the \textbf{Backend Logic} of the extension, enabling multi-file deletion and processing within a single session
-    \item Created new functionality on the graphical user interface, increasing usability by 28\%, using the \textbf{3D Slicer Python API}
-\end{itemize}
-\subsection{\job{Teaching Assistant}{RoboThink Northwest Toronto - Burlington, ON}{May 2023 - Aug. 2023}}
-\begin{itemize}
-    \item Designed and taught a comprehensive curriculum introducing students to programming in Scratch 
-    \item Assisted the STEM Teacher in utilizing RoboThink materials effectively to deliver engaging and interactive lessons
-    \item Enhanced students learning through administrative tasks such as organizing curriculum binders and printouts, improving productivity by 50\%
-    \item Demonstrated attentiveness to individual students, providing personalized support and guidance to enhance their learning experience
-\end{itemize}
-\subsection{\job{Associate}{Dollarama - Burlington, ON}{May 2022 - Aug. 2022}}
-\begin{itemize} 
-    \item Provided courteous customer service by warmly welcoming customers and addressing their inquiries or issues promptly
-    \item Conducted financial transactions including credit/debit cards, cash, gift cards, and store credits with proficiency
-\end{itemize}
-
-\section{Personal Projects}
-\subsection{\href{https://nicholas489.github.io/Sudoku_Solver/}{Sudoku Solver} \textmd{- HTML, CSS, JavaScript} \rightindent{May 2023 - Aug. 2023}}
-\begin{itemize}
-    \item Defined an \textbf{Event Listener} and \textbf{Regex} for capturing and restricting user input to digits 1-9
-    \item Created a \textbf{responsive} and \textbf{interactive web page} using CSS concepts, namely \textbf{Media Queries} and \textbf{Flexbox/Grid Layout}
-    \item Employed the \textbf{Backtracking Algorithm} to solve every valid Sudoku board inputted by the user and displayed the solution dynamically on the web page
-\end{itemize}
-\subsection{Simon-Says Memory Game \textmd{- Java} \rightindent{Feb. 2023 - Apr. 2023}}
-\begin{itemize} 
-    \item Utilized the \textbf{JFrame} library to generate and display the graphical user interface
-    \item Incorporated \textbf{Object-Oriented Programming} concepts such as \textbf{Classes}, \textbf{Objects} and \textbf{Inheritance} to create and display items such as the game level and buttons
-    \item Applied \textbf{Inheritance} and \textbf{Method Overriding} enabling the program to receive the user’s mouse clicks and execute certain functions accordingly
-\end{itemize}
-\subsection{Riemann Sum Calculator \textmd{- Python} \rightindent{Oct. 2022 - Dec. 2022}}
-\begin{itemize} 
-    \item Wrote a script with the purpose of approximating the area under a polynomial curve
-    \item Implemented \textbf{Variables}, \textbf{Data Types}, \textbf{Control Flow}, \textbf{Modules} and \textbf{User Input} to read a given mathematical function
-    \item Executed \textbf{Functions}, \textbf{Exception Handling} and \textbf{File I/O} to calculate the integral and return the area in a .txt file
-\end{itemize}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+    \small{\item{
+     \textbf{Computer Languages}{: Python, Java, C, C\#, HTML, CSS, JavaScript, Lisp, Perl, PHP, Ruby} \\
+     \textbf{Frameworks/Libraries}{: ReactJS, .NET, MySQL, Supabase, Tailwind CSS, Bootstrap, JQuery, PyQt} \\
+     \textbf{Developer Tools}{: Visual Studio/Code, Sublime Text, Jira, Trello, Git/GitHub, Unix/Linux} \\
+     \textbf{Spoken Languages}{: English, Spanish}
+    }}
+ \end{itemize}
+%-------------------------------------------
 \end{document}
+
