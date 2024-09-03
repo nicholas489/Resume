@@ -71,7 +71,7 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{#2} \\
+      \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -108,11 +108,13 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\huge \scshape Nicholas Caro Lopez} \\ \vspace{3pt}
-    \small Burlington, ON $|$ 
-    \href{https://www.linkedin.com/in/nicholas-caro-lopez/}{\color{blue}{LinkedIn}} $|$
-    \href{https://github.com/nicholas489}{\color{blue}{GitHub}} $|$
-    \href{https://nickcarolopez.ca}{\color{blue}{Website}}
+    \textbf{\huge \scshape Nicholas Caro Lopez} \\ 
+    \vspace{3pt}
+    \small Burlington, ON $|$
+    \href{https://www.linkedin.com/in/nicholas-caro-lopez/}
+    {\color{blue}{\underline{LinkedIn}}} $|$
+    \href{https://github.com/nicholas489}{\color{blue}{\underline{GitHub}}} $|$
+    \href{https://nickcarolopez.ca}{\color{blue}{\underline{Website}}}
     \vspace{-9pt}
 \end{center}
 
@@ -136,8 +138,8 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Dayforce (formerly Ceridian)}{Toronto, ON}
       {Software Developer Intern}{May 2024 -- Present}
+      {Dayforce (formerly Ceridian)}{Toronto, ON}
       \resumeItemListStart
         \resumeItem{Worked within a \textbf{9-person} team on migration of user authentication from a monolithic codebase into an identity-based microservice, enhancing scalability by \textbf{n\%}}
         % Both bullet points below are WIPs
@@ -145,8 +147,8 @@
         \resumeItem{Implemented endpoint user interface retrieval using \textbf{ReactJS hooks} and \textbf{JavaScript promises}, enhancing data fetching efficiency}
       \resumeItemListEnd
     \resumeSubheading
-      {Toronto Metropolitan University}{Toronto, ON}
-      {Software Developer}{Sep 2023 -- Apr 2024}
+      {Software Engineer}{Sep 2023 -- Apr 2024}
+      {Laboratory for Translational Medicine, Toronto Metropolitan University}{Toronto, ON}
       \resumeItemListStart
         \resumeItem{Integrated an advanced image-based motion tracking extension into \textbf{open-source software}, 3D Slicer}
         \resumeItem{Cooperated effectively within an \textbf{Agile software development team}, optimizing workflow, visualizing progress, and delivering quality software solutions on time}
@@ -155,8 +157,8 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {RoboThink Northwest Toronto}{Burlington, ON}
       {Teaching Assistant}{May 2023 -- Aug 2023}
+      {RoboThink Northwest Toronto}{Burlington, ON}
       \resumeItemListStart
         \resumeItem{Instructed a comprehensive curriculum introducing students to various programming concepts in Scratch}
         \resumeItem{Supported the STEM Teacher in effectively employing RoboThink materials for engaging and interactive lessons}
@@ -172,17 +174,19 @@
       \vspace{-3pt}
       \resumeProjectHeading
         {
-        \textbf{\href{https://portal.terrahacks.ca}{\color{blue}Terrahacks Application Portal}}
+        \textbf{\href{https://portal.terrahacks.ca}
+        {\color{blue}\underline{Terrahacks Application Portal}}}
         }{\textbf{Supabase $|$ NextJS $/$ ReactJS $|$ Tailwind CSS}}
         \resumeItemListStart
             \resumeItem{Developed an application portal for a \textbf{Hackathon}, swiftly handling the registration of \textbf{473} applicants and \textbf{250} participants}
             \resumeItem{Designed and implemented a forgot password \textbf{data flow diagram} with \textbf{Supabase's  Authentication REST API}}
-            \resumeItem{Streamlined the hacker acceptance/rejection process by leveraging a \textbf{SQL JOIN} query integrating data from tables using a \textbf{one-to-one relationship}}
+            \resumeItem{Streamlined the hacker acceptance/rejection process by leveraging a \textbf{SQL JOIN} query integrating data from tables using both \textbf{one-to-one} and  
+            \textbf{one-to-many relationships}}
           \resumeItemListEnd
       \vspace{-7pt}
       \resumeProjectHeading
           {
-          \textbf{\href{https://nicholas489.github.io/Sudoku_Solver/}{\color{blue}Sudoku Solver}}
+          \textbf{\href{https://nicholas489.github.io/Sudoku_Solver/}{\color{blue}\underline{Sudoku Solver}}}
           }{\textbf{HTML $|$ CSS $|$ JavaScript}}
           \resumeItemListStart
             \resumeItem{Defined an \textbf{Event Listener} and \textbf{Regular Expression} for capturing and restricting user input to digits 1-9}
@@ -199,10 +203,9 @@
     \small{\item{
      \textbf{Computer Languages}{: Python, Java, C, C\#, SQL, HTML, CSS, JavaScript/TypeScript, Lisp, Perl, PHP, Ruby} \\
      \textbf{Frameworks/Libraries}{: ReactJS, .NET, MySQL, Supabase, Tailwind CSS, Bootstrap, JQuery, PyQt} \\
-     \textbf{Developer Tools}{: Visual Studio/Code, Sublime Text, Jira, Trello, Git/GitHub, Unix/Linux} \\
+     \textbf{Developer Tools}{: Git/GitHub, Docker, Postman, Visual Studio/Code, Sublime Text, Jira, Trello, Unix/Linux} \\
      \textbf{Spoken Languages}{: English, Spanish}
     }}
  \end{itemize}
 %-------------------------------------------
 \end{document}
-
